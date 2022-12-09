@@ -2,7 +2,7 @@
 * 
 *
 * @brief Scrivere un programma che visualizzi tutte le coppie di numeri
-*        la cui somma è 15. 
+*        la cui somma Ã¨ 15. 
 * 
 * @author daniele menicucci
 * @date 5/11/2022
