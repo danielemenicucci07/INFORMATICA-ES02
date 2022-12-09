@@ -2,8 +2,8 @@
 * 
 *
 * @brief Scrivere un programma che stampi tutti i numeri primi compresi tra 1 e 100. 
-*        Un numero è primo quando ha come divisore uno e sé stesso. Quindi è primo ciascun 
-*        numero naturale maggiore di 1 che sia divisibile solamente per 1 e per sé stesso.
+*        Un numero Ã¨ primo quando ha come divisore uno e sÃ© stesso. Quindi Ã¨ primo ciascun 
+*        numero naturale maggiore di 1 che sia divisibile solamente per 1 e per sÃ© stesso.
 * 
 * @author daniele menicucci
 * @date 30/11/2022
