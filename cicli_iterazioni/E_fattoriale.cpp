@@ -3,7 +3,7 @@
 *
 * @brief Si scriva un programma che calcoli il fattoriale di un numero intero N dato dalla 
 *        tastiera. Si ricordi che il fattoriale di un numero n (simbolo n!) viene calcolato 
-*        con la seguente formula: n! = n ·(n–1)·(n–2)· ... ·2 ·1.
+*        con la seguente formula: n! = n Â·(nâ€“1)Â·(nâ€“2)Â· ... Â·2 Â·1.
 * 
 * @author daniele menicucci
 * @date 04/12/2022
