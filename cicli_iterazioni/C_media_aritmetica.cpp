@@ -2,7 +2,7 @@
 *
 *
 * @brief Si scriva un programma per calcolare la media aritmetica di una serie di numeri 
-*        inseriti da tastiera. L’introduzione del valore 0 indica il termine del caricamento 
+*        inseriti da tastiera. Lâ€™introduzione del valore 0 indica il termine del caricamento 
 *        dei dati.
 * 
 * @author daniele menicucci
