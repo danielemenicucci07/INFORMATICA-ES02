@@ -18,8 +18,9 @@ struct data//inizializzo record
 	int aa;
 } typedef data;
 
- struct studente//inizializzo record
+struct studente//inizializzo record
 {
+	int matricola;
 	char cognome[N];
 	char nome[N];
 	data nascita;
@@ -34,7 +35,15 @@ int ricercCog(studente [],char []);//dichiaro la funzione ricerca cognome
 
 int stampaMedia(studente []);//dichiaro la funzione stampa media
 
-int Studenti10(studente t[]);//dichiaro la funzione studenti10
+int Studenti10(studente []);//dichiaro la funzione studenti10
+
+void CaricaRecord(studente []);//dichiaro la funzione carica 2.0
+
+void StampaRecord(studente []);//dichiaro la funzione stampa 2.0
+
+void OrdinaCognome(studente []);//dichiaro la funzione ordina
+
+int cercaMese(studente [],char []);//dichiaro la funziona cerca mese
 
 int main()
 {
@@ -42,6 +51,8 @@ int main()
 	studente tab[C];
 	char cognome[N];
 	int r;
+	studente s1;
+	char mese[N];
 	
 	caricaTab(tab);//chiamo la funzione carica nel main
 	
@@ -49,7 +60,6 @@ int main()
 	
 	printf("inserisci il cognome che vuoi trovare: ");
 	scanf("%s",cognome);
-	
 	r= ricercCog(tab,cognome);//chiamo la funzione ricerca cognome
 	if(r!=-1)
 	printf("\n\n il cognome e':%s\tl'indice di riga del cognome e':%d",tab[r],r);
@@ -60,7 +70,23 @@ int main()
 	printf("\n\n%d studenti hanno la media >= a 6",r);
 	
 	r=Studenti10(tab);//chiamo la funzione studenti10
-	printf("\n\n%d studenti hanno almeno un 10 nei voti",r);
+	printf("\n\n%d studenti hanno almeno un 10 nei voti\n\n",r);
+	
+	//CaricaRecord(&s1);;//carica tabella 2.0
+	
+	//StampaRecord(s1);//stampa tabella 2.0
+	
+	OrdinaCognome(tab);//chiamo la funzione Ordina nel main
+	stampaTab(tab);//chiamo la funzione stampa nel main
+	
+	printf("\n\nche mese vuoi trovare: ");
+	scanf("%s",mese);
+	r= cercaMese(tab,mese);
+	if(r!=-1)
+	printf("il mese e': %s e si trova sulla riga %d",tab[r],r);
+	else
+	printf("mese non trovato");
+	
 	
 }
 //carica tabella con informazioni chieste all’utente e/o generate con random 
@@ -70,6 +96,7 @@ void caricaTab(studente t[]) //inizializzo funzione carica tabella
 	int j=0;
 	for(i=0;i<C;i++)
 	{
+		t[i].matricola=i+1;
 		printf("inserisci il tuo cognome: ");
 		scanf("%s",t[i].cognome);
 		printf("inserisci il tuo nome: ");
@@ -166,4 +193,94 @@ int Studenti10(studente t[])
 	}
 	
 	return c;
+}
+//carica tabella richiamando caricaTab
+/*void CaricaTabella(studente t[])
+{
+	int i=0;
+	for(i=0;i<C;i++)
+	{
+		caricaRecord(t);
+	}
+}
+//stampa tabella richiamando la funzione tabella
+void StampaTabella(studente t[])
+{
+	int i=0;
+	for(i=0;i<C;i++)
+	{
+		stampaRecord(t);
+	}
+}*/
+//ordinamento tabella dei cognomi
+void OrdinaCognome(studente t[])
+{
+	int i=0;
+	int j=0;
+	studente z;
+	
+	for(i=0;i<C-1;i++)
+	{
+		for(j=i+1;j<C;j++)
+		{
+			if(strcmp(t[i].cognome,t[j].cognome)>0)
+			{
+				z=t[i];
+				t[i]=t[j];
+				t[j]=z;
+			}
+			
+		}
+	}
+}
+
+void caricaRecord(studente *s)
+{
+	int i;
+	
+	srand(time(NULL));
+	printf("inserisci il tuo cognome: ");
+	scanf("%s",s->cognome);
+	printf("inserisci il tuo nome: ");
+	scanf("%s",s->nome);
+	printf("inserisci il giorno in cui sei nato: ");
+	scanf("%d",&s->nascita.gg);
+	printf("inserisci il mese in cui sei nato: ");
+	scanf("%s",s->nascita.mese);
+	printf("inserisci l'anno di nascita: ");
+	scanf("%d",&s->nascita.aa);
+	
+	for(i=0;i<V;i++)
+	{
+		s->voti[i]=rand()%10+1;
+	}
+}
+
+void stampa(studente s1)
+{
+	int i=0;
+	printf("cognome: %s\n",s1.cognome);
+	printf("nome: %s\n",s1.nome);
+	printf("data: %2d/",s1.nascita.gg);
+	printf("%s/",s1.nascita.mese);
+	printf("%2d\n",s1.nascita.aa);
+	
+	for(i=0;i<V;i++)//faccio un ciclo for che mi stampi 10 voti in modo randomico
+	{
+		printf("voto: %d\n\n",s1.voti[i]);
+	}
+	
+}
+
+int cercaMese(studente t[],char m[])
+{
+	int i=0;
+	
+	for(i=0;i<C;i++)
+	{
+		if(strcmp(t[i].nascita.mese,m)==0)
+		return i;
+	}
+	
+	return -1;
 }
