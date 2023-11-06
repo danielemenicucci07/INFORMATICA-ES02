@@ -5,8 +5,8 @@
 //EOF end-of-file
 
 int contal=-1;//conta lettere parte da -1 perchè mi conta anche il carattere di fine file
-contap=1;//conta parole, conta gli spazi e gli invii quindi la prima non la calcola e allora la facciamo partire da 1
-contar=1;//conta righe, conta gli invii quindi la prima non la calcola e allora la facciamo partire da 1 
+int contap=1;//conta parole, conta gli spazi e gli invii quindi la prima non la calcola e allora la facciamo partire da 1
+int contar=1;//conta righe, conta gli invii quindi la prima non la calcola e allora la facciamo partire da 1 
 
 void CopiaFile(char [],char[]);//dichiaro la funzione
 
@@ -16,6 +16,10 @@ void ContaCaratteri(char[]);//dichiaro la funzione
 
 void ContaNumeri(char[], char[], char[]);
 
+void CesareCrypt(char[], char[], int );
+
+void CesareDecrypt(char[],char [], int);
+
 int main()
 {
 	CopiaFile("in.txt","out.txt");//file di testo
@@ -23,6 +27,8 @@ int main()
 	//ContaCaratteri("file.txt");
 	//printf("lettere=%d\nparole=%d\nrighe=%d\n\n",contal,contap,contar);
 	ContaNumeri("numeri.txt","pari.txt","dispari.txt");
+	CesareCrypt("cesare.txt","cesareCrypt.txt",5);
+	CesareDecrypt("cesareCrypt.txt","cesareDecrypt.txt",5);
 }
 /*Scrivi  un  programma  che  esegue  la  copia  di  un  file  di  testo.  
 Il  programma  legge  carattere per carattere il contenuto del file in.txt e lo ricopia nel file out.txt.*/
@@ -71,7 +77,7 @@ void FileNomi(char nomi[],char nomi2[])
 }
 
 //Scrivi un programma che conta i caratteri, le parole e le righe presenti in un file di testo (non gli spazi, tabulazioni e a capo)
-/*void ContaCaratteri(char file[])
+void ContaCaratteri(char file[])
 {
 	char c;
 
@@ -99,7 +105,7 @@ void FileNomi(char nomi[],char nomi2[])
 	}	
 	
 	fclose(puntfile);//chiude il file
-}*/
+}
 
 /*Scrivi un programma che legge il file numeri.txt (cifre numeriche ascii)composto da una sequenza di numeri di una cifra 
 separati da uno spazio bianco e successivamente scrive 2 file, pari.txt e dispari.txt, nei quali dovrai inserire i numeri 
@@ -109,9 +115,9 @@ void ContaNumeri(char num[],char numpari[],char numdispari[])
 	char c;
 	int numero;
 	
-	FILE * puntnum = fopen(num,"r");
-	FILE * puntnumpari = fopen(numpari,"w");
-	FILE * puntnumdispari = fopen(numdispari,"w");
+	FILE * puntnum = fopen(num,"r");//apertura file in lettura
+	FILE * puntnumpari = fopen(numpari,"w");//apertura file in scrittura
+	FILE * puntnumdispari = fopen(numdispari,"w");//apertura file in scrittura
 	
 	while(!feof(puntnum))
 	{
@@ -131,4 +137,45 @@ void ContaNumeri(char num[],char numpari[],char numdispari[])
 	fclose(puntnumdispari);//chiude il file
 }
 
+/*Scrivere le funzioni cesareCrypt e cesareDecrypt che criptano o decriptano un file in input di una chiave key, 
+usando l’algoritmo di Cesare. Commentare adeguatamente il codice scritto.*/
+void CesareCrypt(char cesare[], char cesareCrypt[], int k)
+{
+	FILE * puntcesare = fopen(cesare,"r");//apertura file in lettura
+	FILE * puntcesareCrypt = fopen(cesareCrypt,"w");//apertura file in scrittura
+	
+	char c;
+	
+	while(!feof(puntcesare))
+	{
+		c=getc(puntcesare);
+		if(c != '\n');
+		c=c+k;
+		
+		putc(c,puntcesareCrypt);
+	}
+	
+	fclose(puntcesare);
+	fclose(puntcesareCrypt);
+}
 
+
+void DecryptCesare(char cesareCrypt[],char cesareDecrypt[], int k)
+{
+	FILE * puntcesareCrypt = fopen(cesareCrypt,"r");//apertura file in lettura
+	FILE * puntcesareDecrypt = fopen(cesareDecrypt,"w");//apertura file in scrittura
+	
+	char c;
+	
+	while(!feof(puntcesareCrypt))
+	{
+		c=getc(puntcesareCrypt);
+		if(c != '\n');
+		c=c-k;
+		
+		putc(c,puntcesareDecrypt);
+	}
+	
+	fclose(puntcesareCrypt);
+	fclose(puntcesareDecrypt);
+}
