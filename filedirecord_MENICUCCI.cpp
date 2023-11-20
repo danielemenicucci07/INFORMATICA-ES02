@@ -1,3 +1,10 @@
+/*
+DANIELE MENICUCCI
+4H
+20/11/2023
+esercizio su file di record
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
