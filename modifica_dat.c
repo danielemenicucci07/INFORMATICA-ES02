@@ -1,4 +1,10 @@
-#include<stdiopo.h>
+/*DANIELE MENICUCCI
+  4H
+  00/11/2023
+  Dichiarazione, definizione e chiamata della funzione che riscrive completamente
+  l' n-esimo record del file con informazioni chieste all'utente nella funzione stessa. Parametri della funzione: nome file e intero n
+*/
+#include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
 #include<string.h>
@@ -26,12 +32,17 @@ void crea(char[]);
 void modifica( char[], char[], char[]);//Si sostituisca su file il cognome1 (per tutte le occorrenze presenti nel file) con cognome2.
 //Si restituisca quante volte è stato incontrato cognome1
 
+void modifica2(char [],int );//Dichiarazione, definizione e chiamata della funzione che riscrive completamente
+//l' n-esimo record del file con informazioni chieste all'utente nella funzione stessa. Parametri della funzione: nome file e intero n
+
 
 int main()
 {
 	crea("modifica.dat");
 	
 	modifica("modifica2.dat","sollo","menicucci");
+
+
 
 }
 void crea(char file[])
@@ -85,4 +96,36 @@ void modifica(char file[],char cog1[],char cog2[])
 	
 	fclose(puntfile);
 	//chiudo il file
+}
+
+modifica2(char file,int k)
+{
+    int c;
+    studente buffer;
+    FILE * puntfile = fopen(file,"rb+")//rb+ perchè devo leggere e scrivere
+
+    if(puntfile!=NULL)
+    {
+        c=fseek(puntfile,k*sizeof(studente)SEEK_SET)//mi posiziono sul 5° record
+        if(c==0)//controllo se ha trovato il record(restituisce 0 se ha trovato il record)
+        {
+            printf("inserisci il cognome dell'alunno: ");
+            scanf("%s",buffer.cognome);
+            printf("inserisc il nome dell'alunno: ");
+            scanf("%s",buffer.nome);
+
+            buffer.nascita.gg=rand()%30+1;//genero il giorno
+            buffer.nascita.mm=rand()%12+1;//genero il mese
+            buffer.nascita.aa=rand()%32+1990;//genero l'anno
+
+            for(int j=0;j<V;j++) 
+			{
+                buffer.voti[j] = rand()%10+1;//genero i voti
+            }
+
+            fwrite(&buffer,sizeof(alunno),1,puntfile);//faccio fwrite nel file puntfile
+        }
+    }
+
+
 }
