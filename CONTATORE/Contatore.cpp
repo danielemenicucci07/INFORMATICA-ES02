@@ -55,3 +55,17 @@ using namespace std;
         }
 
     }
+
+    void Contatore::dec(){
+
+        for(int i=0;i < passo;i--){
+
+            this->valore=valore-1;
+        }
+    }
+
+    void Contatore::stampa(){
+
+        cout<<"il valore e': "<<valore<<endl;
+        cout<<"il passo e': "<<passo<<endl;
+    }
