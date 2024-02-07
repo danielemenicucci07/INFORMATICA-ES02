@@ -2,15 +2,10 @@
 #include <iostream>
 #include "Contatore.h"
 
-class ContatoreDoppio:Contatore()
+class ContatoreDoppio:public Contatore()
 {
-    protected:
-
-        int valore;
-        int passo;
-
     public:
-
+        ContatoreDoppio:Contatore
         incrementa();    
 
 }

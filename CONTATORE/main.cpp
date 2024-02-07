@@ -1,5 +1,5 @@
 #include<iostream>
-#include"contatore_doppio.h"
+#include"contatoredoppio.h"
 int main(){
 
     /*Contatore c1;
