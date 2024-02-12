@@ -1,9 +1,9 @@
-scatola = {}
+let larghezza = prompt("inserisci larghezza scatola")
 
-scatola.larghezza = prompt("inserisci la larghezza della scatola: ")
-scatola.altezza = prompt("inserisci l'altezza della scatola: ")
-scatola.lunghezza = prompt("inserisci la lunghezza della scatola: ")
+let altezza = prompt("inserisci altezza scatola")
 
-volume = scatola.larghezza *scatola.altezza * scatola.lunghezza
+let lunghezza = prompt("inserisci lunghezza scatola")
 
-console.log("volume della scatola = " + volume)
+let volume = larghezza * altezza * lunghezza
+
+console.log("volume scatola = " + volume)
