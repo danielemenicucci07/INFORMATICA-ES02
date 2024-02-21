@@ -1,9 +1,9 @@
 import java.io.*;
 public class EsempioArray
 {
-    public static void main(String args[]) 
+    public static void main(String args[]) throws NumberFormatExpection, IOExpection
 {
-    int i = 0;
+    /*int i = 0;
     int v[] = new int[10];
     InputStreamReader In = new InputStreamReader(System.in);
     BufferedReader Tastiera = new BufferedReader(In);
@@ -21,12 +21,16 @@ public class EsempioArray
         {
             S = S + v[i];
         }
-            System.out.println("somma= " + S);
+            System.out.println("somma= " + S);*/
+            somma();
         }
 
 
-public static void somma(){
+public static void somma() throws NumberFormatExpection, IOExpection
+{
 int x;
+InputStreamReader In = new InputStreamReader(System.in);
+BufferedReader Tastiera = new BufferedReader(In);
 do{
 System.out.print("Immettere un numero: ");
 x = Integer.parseInt(Tastiera.readLine());
