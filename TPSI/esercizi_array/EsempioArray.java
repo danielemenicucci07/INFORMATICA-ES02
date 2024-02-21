@@ -1,9 +1,9 @@
 import java.io.*;
 public class EsempioArray
 {
-    public static void main(String args[]) throws NumberFormatExpection, IOExpection
-{
-    /*int i = 0;
+    public static void es_a()  throws NumberFormatExpection, IOExpection
+    {
+        int i = 0;
     int v[] = new int[10];
     InputStreamReader In = new InputStreamReader(System.in);
     BufferedReader Tastiera = new BufferedReader(In);
@@ -21,38 +21,44 @@ public class EsempioArray
         {
             S = S + v[i];
         }
-            System.out.println("somma= " + S);*/
-            somma();
-        }
+            System.out.println("somma= " + S);
+}
 
 
 public static void somma() throws NumberFormatExpection, IOExpection
 {
-int x;
-InputStreamReader In = new InputStreamReader(System.in);
-BufferedReader Tastiera = new BufferedReader(In);
-do{
-System.out.print("Immettere un numero: ");
-x = Integer.parseInt(Tastiera.readLine());
-}while (x<=0);
-System.out.println("numero inserito: " + x);
-int i = 0;
-int v[] = new int[x];
-for (i=0; i < x; i++)
-{
-System.out.print("Valore: ");
-v[i] = Integer.parseInt(Tastiera.readLine());
+    int x;
+    InputStreamReader In = new InputStreamReader(System.in);
+    BufferedReader Tastiera = new BufferedReader(In);
+    do{
+    System.out.print("Immettere un numero: ");
+    x = Integer.parseInt(Tastiera.readLine());
+    }while (x<=0);
+    System.out.println("numero inserito: " + x);
+    int i = 0;
+    int v[] = new int[x];
+    for (i=0; i < x; i++)
+    {
+    System.out.print("Valore: ");
+    v[i] = Integer.parseInt(Tastiera.readLine());
+    }
+
+    for(i = 0; i < x;i++)
+    {
+    System.out.println("v["+i+"]= "+v[i]);
+    }
+    int S = 0;
+    for(i = 0; i < x;i++)
+    {
+    S = S + v[i];
+    }
+    System.out.println("somma= " +S);
+    }
 }
 
-for(i = 0; i < x;i++)
-{
-System.out.println("v["+i+"]= "+v[i]);
-}
-int S = 0;
-for(i = 0; i < x;i++)
-{
-S = S + v[i];
-}
-System.out.println("somma= " +S);
-}
-}
+    public static void main(String args[]) throws NumberFormatExpection, IOExpection
+    {
+        EsempioArray.es_a();
+    }
+
+
