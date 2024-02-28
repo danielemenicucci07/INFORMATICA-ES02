@@ -20,17 +20,17 @@ public class EserciziArray
         BufferedReader Tastiera = new BufferedReader(In);
 
         for (i = 0; i < 10; i++) {
-            System.out.print("Valore: v[" + i + "]= ");
+            System.out.print("Valore: v[" + i + "]= ");// "printf di valore: "
             v[i] = Integer.parseInt(Tastiera.readLine());
         }
         for (i = 0; i < 10; i++) {
-            System.out.println("v[" + i + "]=" + v[i]);
+            System.out.println("v[" + i + "]=" + v[i]);//ti fa inserire un numero fino a quando non riempi l'array
         }
         int S = 0;
-        for (i = 0; i < 10; i++) {
-            S = S + v[i];
+        for (i = 0; i < 10; i++) { // ciclo for per scorrere tutti i valori dell'array per poi svolgere la somma 
+            S = S + v[i]; // svolgo la somma 
         }
-        System.out.println("somma=" + S);
+        System.out.println("somma=" + S);// stampo a schermo la somma 
     }
     
     public static void somma2() throws NumberFormatException, IOException {
@@ -40,23 +40,23 @@ public class EserciziArray
         do {
             System.out.print("Immettere un numero: ");
             x = Integer.parseInt(Tastiera.readLine());
-        } while (x <= 0);
-        System.out.println("numero inserito: " + x);
+        } while (x <= 0);// fino a quando non inserisci un numero minore uguale a 0 va avanti
+        System.out.println("numero inserito: " + x);// inserisci quanti numeri vuoi sommare
         int i = 0;
-        int v[] = new int[x];
-        for (i = 0; i < x; i++) {
-            System.out.print("Valore: ");
+        int v[] = new int[x]; // dichiaro una nuovo array dinamico tramite new
+        for (i = 0; i < x; i++) { //inserisci x valori dove x è = a NUMERO INSERITO
+            System.out.print("Valore: "); // "printf di valore: "
             v[i] = Integer.parseInt(Tastiera.readLine());
         }
 
         for (i = 0; i < x; i++) {
-            System.out.println("v[" + i + "]=" + v[i]);
+            System.out.println("v[" + i + "]=" + v[i]); //ti fa inserire un numero fino a quando non riempi l'array
         }
         int S = 0;
-        for (i = 0; i < x; i++) {
-            S = S + v[i];
+        for (i = 0; i < x; i++) {  // ciclo for per scorrere tutti i valori dell'array per poi svolgere la somma 
+            S = S + v[i]; // svolgo la somma
         }
-        System.out.println("somma=" + S);
+        System.out.println("somma=" + S); // stampo la somma
     }
 
     public static void contaMinoriDiZero() throws NumberFormatException, IOException {
