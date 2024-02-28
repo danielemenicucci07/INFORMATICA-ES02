@@ -64,14 +64,14 @@ public class EserciziArray
         InputStreamReader In = new InputStreamReader(System.in);
         BufferedReader Tastiera = new BufferedReader(In);
         do {
-            System.out.print("Immettere un numero: ");
+            System.out.print("Immettere un numero: ");// 
             x = Integer.parseInt(Tastiera.readLine());
         } while (x <= 0);
 
         double[] A = new double[x];
         int c = 0;
 
-        for (int i = 0; i < x; i++) {
+        for (int i = 0; i < x; i++) { //inserisci x valori dove x è = a NUMERO INSERITO
 
             System.out.print("Valore: ");
             A[i] = Double.parseDouble(Tastiera.readLine());
