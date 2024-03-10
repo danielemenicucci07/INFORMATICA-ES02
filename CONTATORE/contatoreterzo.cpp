@@ -5,11 +5,6 @@ using namespace std;
 #include "contatoredoppio.h"
 #include "contatoreterzo.h"
 
-contatoreterzo::contatoreterzo(){
-
-    contatoredoppio::contatoredoppio();
-}
-
 void contatoreterzo::inc(){
 
     contatoredoppio::inc();

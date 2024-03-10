@@ -4,11 +4,6 @@ using namespace std;
 #include "Contatore.h"
 #include "contatoredoppio.h"
 
-contatoredoppio::contatoredoppio(){
-
-    Contatore::Contatore();
-}
-
 void contatoredoppio::incrementa(){
 
     Contatore::inc();
