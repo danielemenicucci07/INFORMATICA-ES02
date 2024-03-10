@@ -1,5 +1,7 @@
 #include<iostream>
+#include "Contatore.h"
 #include"contatoredoppio.h"
+#include "contatoreterzo.h"
 int main(){
 
     /*Contatore c1;
