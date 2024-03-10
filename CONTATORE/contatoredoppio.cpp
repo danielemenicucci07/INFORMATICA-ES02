@@ -14,3 +14,8 @@ void contatoredoppio::incrementa(){
     Contatore::inc();
     Contatore::inc();
 }
+
+void ContatoreDoppio::dec() {
+    Contatore::dec();
+    Contatore::dec();
+}

@@ -15,3 +15,8 @@ void contatoreterzo::inc(){
     contatoredoppio::inc();
     contatoredoppio::inc();
 }
+
+void ContatoreDoppio::dec() {
+    Contatore::dec();
+    Contatore::dec();
+}
