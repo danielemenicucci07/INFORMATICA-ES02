@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void lista_concatenata:: push(){
+void lista::push(){
 
     
 }
