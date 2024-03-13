@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void lista::push(){
+void lista::push(int x){
 
     
 }
