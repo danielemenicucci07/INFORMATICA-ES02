@@ -1,7 +1,7 @@
 #ifndef LISTA_CONCATENATA_H
 #define LISTA_CONCATENATA_H
 
-#include<iostrem>
+#include <iostream>
 using namespace std;
 
 struct nodo{
