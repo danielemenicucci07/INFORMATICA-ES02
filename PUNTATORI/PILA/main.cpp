@@ -1,5 +1,5 @@
 #include <iostream>
-#include "pila.h"
+#include "pila.H"
 using namespace std;
 
 int main() 

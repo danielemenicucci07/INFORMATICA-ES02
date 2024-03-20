@@ -4,27 +4,27 @@
 using namespace std;
 
 bool coda::isEmpty() { // controllo se è vuoto
-    if(nElementi!=0) return false;
+    if(nElementi != 0) return false; // se il numero di elementi è diverso da 0 vuol dire che è pieno
     return true;
 }
 
 bool coda::isFull() { // controllo se è pieno
-    if (nElementi == size)  return true;
+    if (nElementi == size)  return true; // se il numero di elementi è uguale alla lunghezza del vettore vuol dire che è pieno
     return false;
 }
 
 bool coda::push(int x) { //aggiunge un elemento
-    if(!isFull()){
-        vet[fine] = x;
-        fine = (fine+1)%size; // la coda arrivata alla fine il puntore torna indietro
-        nElementi++;
+    if(!isFull()){ //se è pieno
+        vet[fine] = x; // aggiungo un elemento x
+        fine = (fine+1)%size; // la coda arrivata alla fine il puntatore torna indietro
+        nElementi++;// vado avanti di un elemento
         return true;
     }
     return false;
 }
 
 bool coda::pop() { // tolgo il primo elemento
-    if(!isEmpty()){
+    if(!isEmpty()){// se è vuoto
         inizio = (inizio+1)%size;
         nElementi--;
         return true;

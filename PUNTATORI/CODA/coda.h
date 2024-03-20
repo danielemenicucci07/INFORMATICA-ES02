@@ -8,10 +8,10 @@ class coda {
         int fine;// ultimo elemento
         int inizio;// primo elemento
         int size;// diensione coda
-        int *vet;
+        int * vet;
     
     public:
-        coda(int size = 10) {
+        coda(int size = 10) { // costruttore
             this -> size = size;
             vet = new int[size];
             inizio = 0;// primo elemento

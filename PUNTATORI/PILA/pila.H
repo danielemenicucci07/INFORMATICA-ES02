@@ -4,15 +4,15 @@
 class Pila 
 {
     private:
-        int *vet;
-        int size;
-        int fine;
+        int * vet;// puntatore
+        int size;// dimensioni dell'array
+        int fine;// indice della pila
     
     public:
         Pila(int size = 10)
         {
-            vet = new int[size];
-            fine = 0;
+            vet = new int[size];//punta all'array che sto creando dinamicamente con new
+            fine = 0;// inizializzo l'ultimo elemento a zero 
         }
 
         bool isEmpty();
