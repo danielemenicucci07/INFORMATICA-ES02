@@ -19,12 +19,12 @@ class coda {
             nElementi = 0;// numero elementi coda
         }
 
-        bool isEmpty();
-        bool isFull();
-        bool push(int);
-        bool pop();
-        int top();
-        void stampa();
+        bool isEmpty();// controllo se è vuoto
+        bool isFull();// controllo se è pieno
+        bool push(int);//aggiunge un elemento
+        bool pop();// tolgo il primo elemento
+        int top();// stampa l'ultimo inserito
+        void stampa();// stampo il vettore
 };
 
 #endif

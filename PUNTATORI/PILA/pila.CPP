@@ -8,10 +8,12 @@ bool Pila::isEmpty()// controllo se è vuoto
     return false;
 }
 
-bool Pila::isFull()// se l'indice fine è >= di size vuol dire che si trova sull''ultimo elemento quindi è pieno
+bool Pila::isFull()// controllo se è pieno
 {
-    if(fine >= size) return true;
+    if(fine >= size) return true; // se l'indice fine è >= di size vuol dire che si trova sull''ultimo elemento quindi è pieno
+{
     return false;
+}
 }
 
 bool Pila::push(int x) //aggiunge un elemento
@@ -19,9 +21,9 @@ bool Pila::push(int x) //aggiunge un elemento
     if(!isFull()) { //se è pieno
         vet[fine] = x;// aggiungo un elemento x
         fine++;// passo al prossimo elemento
-        return true; 
+        return true;// return vero 
     }
-    return false;
+    return false;// return falso
 }
 
 bool Pila::pop() // tolgo il primo elemento

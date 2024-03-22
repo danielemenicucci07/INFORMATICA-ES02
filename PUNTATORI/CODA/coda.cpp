@@ -14,7 +14,7 @@ bool coda::isFull() { // controllo se è pieno
 }
 
 bool coda::push(int x) { //aggiunge un elemento
-    if(!isFull()){ //se è pieno
+    if(!isFull()){ //se non è pieno
         vet[fine] = x; // aggiungo un elemento x
         fine = (fine+1)%size; // la coda arrivata alla fine il puntatore torna indietro
         nElementi++;// vado avanti di un elemento
@@ -24,23 +24,23 @@ bool coda::push(int x) { //aggiunge un elemento
 }
 
 bool coda::pop() { // tolgo il primo elemento
-    if(!isEmpty()){// se è vuoto
+    if(!isEmpty()){// se non è vuoto
         inizio = (inizio+1)%size;
-        nElementi--;
+        nElementi--;// vado indietro di un elemento
         return true;
     }
     return false;
 }
 
 int coda::top() {
-    if(!isEmpty()) {
-        return vet[fine];
+    if(!isEmpty()) {// se non è vuoto
+        return vet[fine];// stampo il vettore
     }
     return 0;
 }
 
 void coda::stampa() {
-    if(!isEmpty()) {
+    if(!isEmpty()) {// se non è vuoto
         for(int i = inizio; i != fine; i = (i+1)%size) {
             cout << vet[i] << " ";
         }
