@@ -5,8 +5,8 @@ class coda {
     
     private:
         int nElementi;// numero elementi
-        int fine;// ultimo elemento
-        int inizio;// primo elemento
+        int fine;// indice
+        int inizio;// indice
         int size;// diensione coda
         int * vet;
     
