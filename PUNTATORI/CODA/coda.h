@@ -8,12 +8,12 @@ class coda {
         int fine;// indice
         int inizio;// indice
         int size;// diensione coda
-        int * vet;
+        int * vet;// puntatori
     
     public:
         coda(int size = 10) { // costruttore
             this -> size = size;
-            vet = new int[size];
+            vet = new int[size];//vet punta a un array di interi di size dimensioni
             inizio = 0;// primo elemento
             fine = 0;// ultimo elemento
             nElementi = 0;// numero elementi coda
