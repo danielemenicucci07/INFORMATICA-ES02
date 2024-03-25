@@ -34,7 +34,7 @@ bool coda::pop() { // tolgo il primo elemento
 
 int coda::top() {
     if(!isEmpty()) {// se non è vuoto
-        return vet[fine];// stampo il vettore
+        return vet[inizio];// stampo il vettore
     }
     return 0;
 }

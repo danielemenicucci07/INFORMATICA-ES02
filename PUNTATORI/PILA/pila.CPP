@@ -18,7 +18,7 @@ bool Pila::isFull()// controllo se è pieno
 
 bool Pila::push(int x) //aggiunge un elemento
 {
-    if(!isFull()) { //se è pieno
+    if(!isFull()) { //se non è pieno
         vet[fine] = x;// aggiungo un elemento x
         fine++;// passo al prossimo elemento
         return true;// return vero 
@@ -28,7 +28,7 @@ bool Pila::push(int x) //aggiunge un elemento
 
 bool Pila::pop() // tolgo il primo elemento
 {
-    if(!isEmpty()) { //se è vuoto
+    if(!isEmpty()) { //se non è vuoto
         fine--;// tolgo un elemento
         return true;
     }
@@ -37,7 +37,7 @@ bool Pila::pop() // tolgo il primo elemento
 
 int Pila::top() // stampa l'ultimo inserito
 {
-    if(!isEmpty())//se è vuoto
+    if(!isEmpty())//se non è vuoto
     {
         return vet[fine-1];// returna l'ultimo inserito
     }

@@ -14,7 +14,7 @@ struct nodo{
 class lista{
 
     private: 
-        nodo * testa;
+        nodo * testa;// il primo
         nodo * p;
 
 

@@ -24,7 +24,7 @@ int lista::top()
 }
 
 
-void oista::stampa()
+void lista::stampa()
 {
      do{
         cout<<p->info<<endl;
