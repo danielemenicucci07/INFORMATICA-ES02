@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function () {// aspetti che si carica tuttta la pag html e poi  parte la funzione
     main()
 }
 
