@@ -27,11 +27,11 @@ function setInputField() {
     password2.addEventListener("change", () => {
 
         if (password.value !== password2.value) {
-            errText.hidden = false
-            pannelloControllo.hidden = true
+            errText.hidden = false// non lo nasconde
+            pannelloControllo.hidden = true//lo nasconde
         }
 
-        else if (!controllaPassword()) {
+        else if (!controllaPassword()) {// se non rispetta i parametri esce il quadrato
 
             errText.hidden = true
             pannelloControllo.hidden = false
@@ -50,8 +50,8 @@ function setInputField() {
 function controllaPassword() {
     text = document.getElementById("password").value
     
-    const myRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&_\-+?/]).{5,}$/;
-    const result = myRegex.test(text)
+    const myRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&_\-+?/]).{5,}$/;//controllare che ci siano i parametri
+    const result = myRegex.test(text)// 0 se non corrisponde e 1 se corrisponde
     return result
     
 }
@@ -98,10 +98,10 @@ function setPannello() {
 
     for (i of requisitiPassword) {
 
-        elemento = document.createElement("li")
-        elemento.innerHTML = i
-        elemento.style.textAlign = "left"
-        listaControllo.appendChild(elemento)
+        elemento = document.createElement("li")// tag html che rappresenta ogni frase
+        elemento.innerHTML = i// scorre le frasi
+        elemento.style.textAlign = "left"//metti a sinistra
+        listaControllo.appendChild(elemento)//aggiunge elemento alla lista
     }
 
     pannelloControllo.appendChild(listaControllo)

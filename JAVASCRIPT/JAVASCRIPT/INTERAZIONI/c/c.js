@@ -7,7 +7,7 @@ function main() {
     text = document.getElementById("textArea")
 
     text.addEventListener("focus", () => {
-        text.style.backgroundColor = "rgba(220, 125, 0, .5)"
+        text.style.backgroundColor = "rgba(204, 134, 3, .6)"
     })
 
     text.addEventListener("blur", () => {
