@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+}
+
+.pulsanti {
+    color: white;
+    background-color: blue;
+}
