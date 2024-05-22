@@ -5,11 +5,11 @@ window.onload = function () {// aspetti che si carica tuttta la pag html e poi  
 function main() {
     button = document.getElementById('bottone')
 
-    button.addEventListener("mouseover", () => {
-        button.style.backgroundColor = "red";
+    button.addEventListener("mouseover", () => {//quando ci sono sopra 
+        button.style.backgroundColor = "red";//diventa rosso
     })
 
-    button.addEventListener("mouseout", () => {
-        button.style.backgroundColor = "";
+    button.addEventListener("mouseout", () => {// quando vado via
+        button.style.backgroundColor = "";//torna come prima
     })
 }
