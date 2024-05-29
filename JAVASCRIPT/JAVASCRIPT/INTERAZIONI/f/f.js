@@ -1,10 +1,10 @@
-const pass = document.getElementById("password");// prende elemento password tramite id 
+const pass = document.getElementById("password");
 
-pass.addEventListener("change", () => {// c'è un evento 
-    if(pass.value.length < 8){// se ha meno di 8 caratteri
-        pass.style.backgroundColor = "red";// diventa rossa perchè sbagliata
+pass.addEventListener("change", () => {
+    if(pass.value.length < 8){
+        pass.style.backgroundColor = "red";
     }    
     else{
-        pass.style.backgroundColor = "green";// diventa verde perchè corretta
+        pass.style.backgroundColor = "green";
     }
 });

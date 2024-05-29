@@ -1,12 +1,12 @@
-window.onload = function () {// aspetti che si carica tuttta la pag html e poi  parte la funzione
+window.onload = function () {
     main()
 }
 
 function main() {
     button = document.getElementById('bottone')
 
-    button.addEventListener("mouseover", () => {//quando ci sono sopra 
-        button.style.backgroundColor = "red";//diventa rosso
+    button.addEventListener("mouseover", () => {
+        button.style.backgroundColor = "red";
     })
 
     button.addEventListener("mouseout", () => {// quando vado via
